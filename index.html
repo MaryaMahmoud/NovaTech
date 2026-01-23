@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NovaTech | Digital Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">NovaTech</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+          <li><a href="pages/services.html" data-i18n="nav_services">Services</a></li>
+          <li><a href="pages/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+          <li><a href="pages/testimonials.html" data-i18n="nav_testimonials">Testimonials</a></li>
+          <li><a href="pages/contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="lang-toggle" class="icon-btn">🌐</button>
+        <button id="theme-toggle" class="icon-btn">🌙</button>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2 data-i18n="hero_title">Building Digital Solutions for the Future</h2>
+        <p data-i18n="hero_desc">
+          We help startups and businesses grow with modern, scalable, and beautiful digital products.
+        </p>
+        <div class="hero-buttons">
+          <a href="pages/contact.html" class="btn primary" data-i18n="get_started">Get Started</a>
+          <a href="pages/services.html" class="btn secondary" data-i18n="view_services">View Services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Tech Illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <div class="container">
+      <h3 class="section-title" data-i18n="services_title">Our Services</h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-code"></i>
+          <h4 data-i18n="service_web">Web Development</h4>
+          <p data-i18n="service_web_desc">High-quality, responsive websites built with modern technologies.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4 data-i18n="service_mobile">Mobile App Development</h4>
+          <p data-i18n="service_mobile_desc">Powerful mobile apps for iOS and Android platforms.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <h4 data-i18n="service_uiux">UI/UX Design</h4>
+          <p data-i18n="service_uiux_desc">Beautiful, user-friendly designs that convert and engage.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-cloud"></i>
+          <h4 data-i18n="service_cloud">Cloud Solutions</h4>
+          <p data-i18n="service_cloud_desc">Secure, scalable, and cost-effective cloud infrastructure.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4 data-i18n="service_security">Cyber Security</h4>
+          <p data-i18n="service_security_desc">Protect your systems with advanced security solutions.</p>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="pages/services.html" class="btn primary" data-i18n="view_services">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h3 class="section-title" data-i18n="features_title">Why Choose NovaTech?</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-rocket"></i>
+          <h4 data-i18n="feature_fast">Fast Delivery</h4>
+          <p data-i18n="feature_fast_desc">We deliver projects quickly without compromising quality.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cogs"></i>
+          <h4 data-i18n="feature_scalable">Scalable Solutions</h4>
+          <p data-i18n="feature_scalable_desc">Our solutions grow with your business needs.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-lightbulb"></i>
+          <h4 data-i18n="feature_innovative">Innovative Ideas</h4>
+          <p data-i18n="feature_innovative_desc">We bring fresh, creative ideas to every project.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-handshake"></i>
+          <h4 data-i18n="feature_support">Dedicated Support</h4>
+          <p data-i18n="feature_support_desc">Our team is always ready to support you.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line"></i>
+          <h4 data-i18n="feature_data">Data-Driven Approach</h4>
+          <p data-i18n="feature_data_desc">We make decisions based on data and real results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="testimonials-preview">
+    <div class="container">
+      <h3 class="section-title" data-i18n="testimonials_title">What Our Clients Say</h3>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Client">
+          <p data-i18n="testimonial_1">"NovaTech helped us launch our product in record time. Highly recommended!"</p>
+          <h5>Sarah Johnson</h5>
+          <span>Startup Founder</span>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Client">
+          <p data-i18n="testimonial_2">"Professional team with excellent communication and results."</p>
+          <h5>Mohamed Ali</h5>
+          <span>Business Owner</span>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80" alt="Client">
+          <p data-i18n="testimonial_3">"Our website traffic and conversions increased significantly."</p>
+          <h5>Emily Carter</h5>
+          <span>Marketing Manager</span>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="pages/testimonials.html" class="btn secondary" data-i18n="view_testimonials">View All Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-content">
+      <h3 data-i18n="cta_title">Ready to Start Your Project?</h3>
+      <p data-i18n="cta_desc">Let’s build something amazing together.</p>
+      <a href="pages/contact.html" class="btn primary" data-i18n="contact_cta">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 NovaTech. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
