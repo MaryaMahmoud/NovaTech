@@ -1,195 +1,243 @@
-// ================== THEME TOGGLE ==================
-const themeToggle = document.getElementById("theme-toggle");
+// ================= GLOBAL ELEMENTS =================
+const themeToggle = document.getElementById("themeToggle");
+const langToggle = document.getElementById("langToggle");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
+// ================= THEME SYSTEM =================
 function applyTheme(theme) {
-  if (theme === "dark") {
-    document.body.classList.add("dark");
-    if (themeToggle) themeToggle.textContent = "☀️";
-  } else {
-    document.body.classList.remove("dark");
-    if (themeToggle) themeToggle.textContent = "🌙";
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
   }
 }
 
 const savedTheme = localStorage.getItem("theme") || "light";
 applyTheme(savedTheme);
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
-    applyTheme(newTheme);
-  });
-}
+themeToggle?.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  applyTheme(newTheme);
+});
 
-// ================== LANGUAGE TOGGLE ==================
-const langToggle = document.getElementById("lang-toggle");
+// ================= LANGUAGE SYSTEM =================
+let currentLang = localStorage.getItem("lang") || "en";
 
 const translations = {
   en: {
-    nav_home: "Home",
-    nav_services: "Services",
-    nav_pricing: "Pricing",
-    nav_testimonials: "Testimonials",
-    nav_contact: "Contact",
-
+    home: "Home",
+    services: "Services",
+    pricing: "Pricing",
+    testimonials: "Testimonials",
+    contact: "Contact",
     hero_title: "Building Digital Solutions for the Future",
     hero_desc: "We help startups and businesses grow with modern, scalable, and beautiful digital products.",
     get_started: "Get Started",
     view_services: "View Services",
-
-    services_title: "Our Services",
-    service_web: "Web Development",
-    service_web_desc: "High-quality, responsive websites built with modern technologies.",
-    service_mobile: "Mobile App Development",
-    service_mobile_desc: "Powerful mobile apps for iOS and Android platforms.",
-    service_uiux: "UI/UX Design",
-    service_uiux_desc: "Beautiful, user-friendly designs that convert and engage.",
-    service_cloud: "Cloud Solutions",
-    service_cloud_desc: "Secure, scalable, and cost-effective cloud infrastructure.",
-    service_security: "Cyber Security",
-    service_security_desc: "Protect your systems with advanced security solutions.",
-
     features_title: "Why Choose NovaTech?",
     feature_fast: "Fast Delivery",
-    feature_fast_desc: "We deliver projects quickly without compromising quality.",
+    feature_fast_desc: "We deliver high-quality solutions in record time.",
     feature_scalable: "Scalable Solutions",
-    feature_scalable_desc: "Our solutions grow with your business needs.",
+    feature_scalable_desc: "Our systems grow with your business.",
     feature_innovative: "Innovative Ideas",
-    feature_innovative_desc: "We bring fresh, creative ideas to every project.",
+    feature_innovative_desc: "We turn ideas into powerful digital products.",
     feature_support: "Dedicated Support",
-    feature_support_desc: "Our team is always ready to support you.",
+    feature_support_desc: "We support you at every step.",
     feature_data: "Data-Driven Approach",
-    feature_data_desc: "We make decisions based on data and real results.",
-
+    feature_data_desc: "We use data to optimize performance and results.",
+    stat_projects: "Projects Completed",
+    stat_clients: "Happy Clients",
+    stat_years: "Years of Experience",
+    stat_support: "24/7 Support",
     testimonials_title: "What Our Clients Say",
-    testimonial_1: "NovaTech helped us launch our product in record time. Highly recommended!",
-    testimonial_2: "Professional team with excellent communication and results.",
-    testimonial_3: "Our website traffic and conversions increased significantly.",
-    view_testimonials: "View All Testimonials",
-
-    cta_title: "Ready to Start Your Project?",
-    cta_desc: "Let’s build something amazing together.",
-    contact_cta: "Contact Us",
-
-    pricing_title: "Pricing Plans",
-    pricing_desc: "Choose the plan that fits your business needs.",
-    plan_starter: "Starter",
-    plan_professional: "Professional",
-    plan_enterprise: "Enterprise",
-    choose_plan: "Choose Plan",
-    most_popular: "Most Popular",
-
-    faq_title: "Frequently Asked Questions",
-
-    contact_title: "Contact Us",
-    contact_desc: "We would love to hear from you. Let’s work together!",
-    contact_name: "Full Name",
-    contact_email: "Email Address",
-    contact_message: "Your Message",
-    contact_send: "Send Message"
+    testimonial_1_text: "“NovaTech helped us launch our product in record time. Highly recommended!”",
+    testimonial_1_author: "— Sarah Johnson, Startup Founder",
+    testimonial_2_text: "“Professional team, excellent communication, and outstanding results.”",
+    testimonial_2_author: "— Michael Lee, CEO",
+    testimonial_3_text: "“They transformed our ideas into a real product we’re proud of.”",
+    testimonial_3_author: "— Amina Hassan, Product Manager",
+    cta_title: "Ready to build your next digital product?",
+    cta_desc: "Let’s work together to bring your ideas to life.",
+    cta_button: "Contact Us",
+    footer_rights: "All rights reserved.",
+    services_title: "Our Services",
+    services_desc: "Discover our complete range of digital services tailored to your business needs.",
+    filter_all: "All",
+    filter_web: "Web",
+    filter_mobile: "Mobile",
+    filter_design: "Design",
+    filter_cloud: "Cloud",
+    filter_security: "Security",
+    search_services: "Search services...",
+    sort: "Sort",
+    sort_name: "Name",
+    sort_popular: "Most Popular",
+    favorites_title: "❤️ Your Favorite Services",
+    faq_title: "❓ Frequently Asked Questions",
+    request_title: "📩 Request a Service",
+    form_name: "Name",
+    form_email: "Email",
+    form_service: "Select Service",
+    form_budget: "Estimated Budget ($)",
+    form_details: "Project Details",
+    form_submit: "Submit Request",
+    select_service: "Select a service",
+    no_favorites: "No favorite services yet.",
+    toast_added: "Added to favorites ❤️",
+    toast_removed: "Removed from favorites",
+    toast_rating: "You rated this service {value} stars ⭐",
+    toast_fill_all: "Please fill in all fields.",
+    toast_request_sent: "Your request has been submitted successfully! 🚀",
+    request_service: "Request this service",
+    requests: "requests",
+    faq_q1: "How long does a project take?",
+    faq_a1: "Project duration depends on complexity, but usually ranges from 2 to 12 weeks.",
+    faq_q2: "Do you offer ongoing support?",
+    faq_a2: "Yes, we provide maintenance and support packages for all services.",
+    faq_q3: "Can I request a custom solution?",
+    faq_a3: "Absolutely! We specialize in building tailored solutions for unique business needs.",
+    faq_q4: "What technologies do you use?",
+    faq_a4: "We use modern technologies such as React, Vue, Node.js, Flutter, and cloud platforms.",
+    service_web: "Web Development",
+    service_web_desc: "Modern and high-performance websites.",
+    service_web_details: "We build fast, secure, and scalable websites using the latest technologies.",
+    service_mobile: "Mobile App Development",
+    service_mobile_desc: "Native and cross-platform mobile apps.",
+    service_mobile_details: "We design and develop iOS and Android apps with excellent user experience.",
+    service_design: "UI/UX Design",
+    service_design_desc: "User-centered and modern designs.",
+    service_design_details: "We focus on usability, accessibility, and aesthetics to improve user satisfaction.",
+    service_cloud: "Cloud Solutions",
+    service_cloud_desc: "Secure and scalable cloud systems.",
+    service_cloud_details: "We migrate, manage, and optimize your infrastructure on the cloud.",
+    service_security: "Cyber Security",
+    service_security_desc: "Advanced protection for your business.",
+    service_security_details: "We provide security audits, monitoring, and protection from cyber threats."
   },
 
   ar: {
-    nav_home: "الرئيسية",
-    nav_services: "الخدمات",
-    nav_pricing: "الأسعار",
-    nav_testimonials: "آراء العملاء",
-    nav_contact: "تواصل معنا",
-
+    home: "الرئيسية",
+    services: "الخدمات",
+    pricing: "الأسعار",
+    testimonials: "آراء العملاء",
+    contact: "تواصل معنا",
     hero_title: "نبني حلولًا رقمية للمستقبل",
-    hero_desc: "نساعد الشركات الناشئة والأعمال على النمو من خلال منتجات رقمية حديثة وقابلة للتوسع وجميلة.",
+    hero_desc: "نساعد الشركات الناشئة والأعمال على النمو بمنتجات رقمية حديثة وقابلة للتوسع وجميلة التصميم.",
     get_started: "ابدأ الآن",
     view_services: "عرض الخدمات",
-
-    services_title: "خدماتنا",
-    service_web: "تطوير المواقع",
-    service_web_desc: "مواقع عالية الجودة ومتجاوبة باستخدام أحدث التقنيات.",
-    service_mobile: "تطوير تطبيقات الجوال",
-    service_mobile_desc: "تطبيقات قوية لأنظمة iOS و Android.",
-    service_uiux: "تصميم واجهات وتجربة المستخدم",
-    service_uiux_desc: "تصاميم جميلة وسهلة الاستخدام تزيد من التفاعل.",
-    service_cloud: "الحلول السحابية",
-    service_cloud_desc: "بنية سحابية آمنة وقابلة للتوسع وفعالة من حيث التكلفة.",
-    service_security: "الأمن السيبراني",
-    service_security_desc: "حماية أنظمتك وبياناتك بأحدث الحلول الأمنية.",
-
     features_title: "لماذا تختار NovaTech؟",
     feature_fast: "تسليم سريع",
-    feature_fast_desc: "نسلم المشاريع بسرعة دون المساس بالجودة.",
+    feature_fast_desc: "نقدم حلولًا عالية الجودة في وقت قياسي.",
     feature_scalable: "حلول قابلة للتوسع",
-    feature_scalable_desc: "حلولنا تنمو مع نمو أعمالك.",
+    feature_scalable_desc: "أنظمتنا تنمو مع عملك.",
     feature_innovative: "أفكار مبتكرة",
-    feature_innovative_desc: "نقدم أفكارًا إبداعية جديدة لكل مشروع.",
+    feature_innovative_desc: "نحوّل الأفكار إلى منتجات رقمية قوية.",
     feature_support: "دعم مخصص",
-    feature_support_desc: "فريقنا دائمًا جاهز لدعمك.",
+    feature_support_desc: "ندعمك في كل خطوة.",
     feature_data: "نهج قائم على البيانات",
-    feature_data_desc: "نتخذ قرارات مبنية على البيانات والنتائج.",
-
+    feature_data_desc: "نستخدم البيانات لتحسين الأداء والنتائج.",
+    stat_projects: "مشروعًا منجزًا",
+    stat_clients: "عملاء سعداء",
+    stat_years: "سنوات خبرة",
+    stat_support: "دعم على مدار الساعة",
     testimonials_title: "ماذا يقول عملاؤنا",
-    testimonial_1: "ساعدتنا NovaTech في إطلاق منتجنا في وقت قياسي. أنصح بها بشدة!",
-    testimonial_2: "فريق محترف بتواصل ممتاز ونتائج رائعة.",
-    testimonial_3: "زاد عدد زيارات موقعنا وتحويلاتنا بشكل ملحوظ.",
-    view_testimonials: "عرض جميع الآراء",
-
-    cta_title: "هل أنت مستعد لبدء مشروعك؟",
-    cta_desc: "لنقم ببناء شيء رائع معًا.",
-    contact_cta: "تواصل معنا",
-
-    pricing_title: "خطط الأسعار",
-    pricing_desc: "اختر الخطة التي تناسب احتياجات عملك.",
-    plan_starter: "الباقة المبدئية",
-    plan_professional: "الباقة الاحترافية",
-    plan_enterprise: "باقة الشركات",
-    choose_plan: "اختر الخطة",
-    most_popular: "الأكثر شيوعًا",
-
-    faq_title: "الأسئلة الشائعة",
-
-    contact_title: "تواصل معنا",
-    contact_desc: "يسعدنا التواصل معك. لنعمل معًا!",
-    contact_name: "الاسم الكامل",
-    contact_email: "البريد الإلكتروني",
-    contact_message: "رسالتك",
-    contact_send: "إرسال الرسالة"
+    testimonial_1_text: "«ساعدتنا NovaTech على إطلاق منتجنا في وقت قياسي. أنصح بها بشدة!»",
+    testimonial_1_author: "— سارة جونسون، مؤسسة شركة ناشئة",
+    testimonial_2_text: "«فريق محترف، تواصل ممتاز، ونتائج مذهلة.»",
+    testimonial_2_author: "— مايكل لي، المدير التنفيذي",
+    testimonial_3_text: "«حوّلوا أفكارنا إلى منتج حقيقي نفخر به.»",
+    testimonial_3_author: "— أمينة حسن، مديرة منتجات",
+    cta_title: "هل أنت مستعد لبناء منتجك الرقمي القادم؟",
+    cta_desc: "دعينا نعمل معًا لتحويل أفكارك إلى واقع.",
+    cta_button: "تواصل معنا",
+    footer_rights: "جميع الحقوق محفوظة.",
+    services_title: "خدماتنا",
+    services_desc: "اكتشف مجموعتنا الكاملة من الخدمات الرقمية المصممة لتناسب احتياجات عملك.",
+    filter_all: "الكل",
+    filter_web: "ويب",
+    filter_mobile: "تطبيقات",
+    filter_design: "تصميم",
+    filter_cloud: "سحابة",
+    filter_security: "أمن",
+    search_services: "ابحث في الخدمات...",
+    sort: "ترتيب",
+    sort_name: "الاسم",
+    sort_popular: "الأكثر شيوعًا",
+    favorites_title: "❤️ خدماتك المفضلة",
+    faq_title: "❓ الأسئلة الشائعة",
+    request_title: "📩 طلب خدمة",
+    form_name: "الاسم",
+    form_email: "البريد الإلكتروني",
+    form_service: "اختر الخدمة",
+    form_budget: "الميزانية المتوقعة ($)",
+    form_details: "تفاصيل المشروع",
+    form_submit: "إرسال الطلب",
+    select_service: "اختر خدمة",
+    no_favorites: "لا توجد خدمات مفضلة بعد.",
+    toast_added: "تمت الإضافة إلى المفضلة ❤️",
+    toast_removed: "تمت الإزالة من المفضلة",
+    toast_rating: "قمت بتقييم الخدمة {value} نجوم ⭐",
+    toast_fill_all: "يرجى ملء جميع الحقول.",
+    toast_request_sent: "تم إرسال طلبك بنجاح! 🚀",
+    request_service: "اطلب هذه الخدمة",
+    requests: "طلبات",
+    faq_q1: "كم يستغرق تنفيذ المشروع؟",
+    faq_a1: "مدة التنفيذ تعتمد على التعقيد، وغالبًا تتراوح بين أسبوعين إلى 12 أسبوعًا.",
+    faq_q2: "هل تقدمون دعمًا مستمرًا؟",
+    faq_a2: "نعم، نوفر باقات صيانة ودعم لجميع الخدمات.",
+    faq_q3: "هل يمكنني طلب حل مخصص؟",
+    faq_a3: "بالتأكيد! نحن متخصصون في بناء حلول مخصصة لاحتياجات الأعمال الفريدة.",
+    faq_q4: "ما هي التقنيات التي تستخدمونها؟",
+    faq_a4: "نستخدم تقنيات حديثة مثل React وVue وNode.js وFlutter ومنصات الحوسبة السحابية.",
+    service_web: "تطوير مواقع الويب",
+    service_web_desc: "مواقع حديثة وعالية الأداء.",
+    service_web_details: "نبني مواقع سريعة وآمنة وقابلة للتوسع باستخدام أحدث التقنيات.",
+    service_mobile: "تطوير تطبيقات الهاتف",
+    service_mobile_desc: "تطبيقات أصلية ومتعددة المنصات.",
+    service_mobile_details: "نصمم ونطور تطبيقات iOS وAndroid بتجربة مستخدم ممتازة.",
+    service_design: "تصميم واجهات وتجربة المستخدم",
+    service_design_desc: "تصاميم حديثة تتمحور حول المستخدم.",
+    service_design_details: "نركز على سهولة الاستخدام، وإمكانية الوصول، والجماليات لتحسين رضا المستخدم.",
+    service_cloud: "الحلول السحابية",
+    service_cloud_desc: "أنظمة سحابية آمنة وقابلة للتوسع.",
+    service_cloud_details: "نقوم بترحيل وإدارة وتحسين بنيتك التحتية على السحابة.",
+    service_security: "الأمن السيبراني",
+    service_security_desc: "حماية متقدمة لأعمالك.",
+    service_security_details: "نوفر تدقيقًا أمنيًا ومراقبة وحماية من التهديدات السيبرانية."
   }
 };
 
-function applyLanguage(lang) {
-  document.documentElement.lang = lang;
-  document.body.dir = lang === "ar" ? "rtl" : "ltr";
+function applyTranslations() {
+  const dict = translations[currentLang];
+
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+  localStorage.setItem("lang", currentLang);
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
+    if (dict[key]) el.textContent = dict[key];
   });
 
-  if (langToggle) {
-    langToggle.textContent = lang === "ar" ? "EN" : "AR";
-  }
-}
-
-const savedLang = localStorage.getItem("lang") || "en";
-applyLanguage(savedLang);
-
-if (langToggle) {
-  langToggle.addEventListener("click", () => {
-    const currentLang = localStorage.getItem("lang") || "en";
-    const newLang = currentLang === "en" ? "ar" : "en";
-    localStorage.setItem("lang", newLang);
-    applyLanguage(newLang);
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key]) el.placeholder = dict[key];
   });
+
+  if (langToggle) langToggle.textContent = currentLang === "ar" ? "EN" : "AR";
 }
 
-// ================== MOBILE MENU ==================
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+applyTranslations();
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-}
+langToggle?.addEventListener("click", () => {
+  currentLang = currentLang === "ar" ? "en" : "ar";
+  applyTranslations();
+  document.dispatchEvent(new Event("languageChanged"));
+});
+
+// ================= MOBILE MENU =================
+menuToggle?.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});

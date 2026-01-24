@@ -1,129 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>NovaTech | Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/services.css" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">NovaTech</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="services.html" class="active" data-i18n="nav_services">Services</a></li>
-          <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
-          <li><a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a></li>
-          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
-        </ul>
-      </nav>
+<header class="navbar">
+  <div class="container nav-content">
+    <h2 class="logo">NovaTech</h2>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html" data-i18n="home">Home</a>
+      <a href="services.html" class="active" data-i18n="services">Services</a>
+      <a href="pricing.html" data-i18n="pricing">Pricing</a>
+      <a href="testimonials.html" data-i18n="testimonials">Testimonials</a>
+      <a href="contact.html" data-i18n="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="langToggle">🌐</button>
+      <button id="themeToggle">🌙</button>
+      <button id="menuToggle" class="menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
 
-      <div class="nav-actions">
-        <button id="lang-toggle" class="icon-btn">🌐</button>
-        <button id="theme-toggle" class="icon-btn">🌙</button>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+<!-- ===== HERO ===== -->
+<section class="services-hero">
+  <div class="container">
+    <h1 data-i18n="services_title"></h1>
+    <p data-i18n="services_desc"></p>
+  </div>
+</section>
+
+<!-- ===== CONTROLS ===== -->
+<section class="services-controls">
+  <div class="container controls-content">
+    <div class="tabs">
+      <button class="tab active" data-category="all" data-i18n="filter_all"></button>
+      <button class="tab" data-category="web" data-i18n="filter_web"></button>
+      <button class="tab" data-category="mobile" data-i18n="filter_mobile"></button>
+      <button class="tab" data-category="design" data-i18n="filter_design"></button>
+      <button class="tab" data-category="cloud" data-i18n="filter_cloud"></button>
+      <button class="tab" data-category="security" data-i18n="filter_security"></button>
+    </div>
+
+    <div class="search-filter">
+      <input type="text" id="serviceSearch" data-i18n-placeholder="search_services">
+      <select id="serviceSort">
+        <option value="default" data-i18n="sort"></option>
+        <option value="name" data-i18n="sort_name"></option>
+        <option value="popular" data-i18n="sort_popular"></option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES GRID ===== -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== FAVORITES SECTION ===== -->
+<section class="favorites-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="favorites_title">❤️ Your Favorite Services</h2>
+    <div id="favoritesGrid" class="services-grid"></div>
+  </div>
+</section>
+
+<!-- ===== FAQ SECTION ===== -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="faq_title">❓ Frequently Asked Questions</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===== SERVICE REQUEST FORM ===== -->
+<section class="request-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="request_title">📩 Request a Service</h2>
+    <form id="serviceForm" class="service-form">
+      <div class="form-group">
+        <label for="clientName" data-i18n="form_name">Name</label>
+        <input type="text" id="clientName" required>
       </div>
-    </div>
-  </header>
-
-  <section class="page-hero">
-    <div class="container">
-      <h2 data-i18n="services_title">Our Services</h2>
-      <p data-i18n="services_title_desc">We offer a wide range of digital services to help your business grow.</p>
-    </div>
-  </section>
-
-  <section class="services-section">
-    <div class="container">
-      <div class="services-grid">
-
-        <div class="service-card">
-          <i class="fas fa-code"></i>
-          <h3 data-i18n="service_web">Web Development</h3>
-          <p data-i18n="service_web_desc">Modern, responsive websites and web apps built with the latest technologies.</p>
-          <ul>
-            <li>Responsive Design</li>
-            <li>SEO Friendly</li>
-            <li>High Performance</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <i class="fas fa-mobile-alt"></i>
-          <h3 data-i18n="service_mobile">Mobile App Development</h3>
-          <p data-i18n="service_mobile_desc">Native and cross-platform mobile applications for iOS and Android.</p>
-          <ul>
-            <li>iOS & Android</li>
-            <li>App Store Deployment</li>
-            <li>Maintenance & Support</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <i class="fas fa-paint-brush"></i>
-          <h3 data-i18n="service_uiux">UI/UX Design</h3>
-          <p data-i18n="service_uiux_desc">Beautiful, user-centered designs that enhance usability and conversions.</p>
-          <ul>
-            <li>User Research</li>
-            <li>Wireframing</li>
-            <li>Prototyping</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <i class="fas fa-cloud"></i>
-          <h3 data-i18n="service_cloud">Cloud Solutions</h3>
-          <p data-i18n="service_cloud_desc">Secure, scalable cloud infrastructure and deployment solutions.</p>
-          <ul>
-            <li>Cloud Migration</li>
-            <li>DevOps</li>
-            <li>Server Management</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <i class="fas fa-shield-alt"></i>
-          <h3 data-i18n="service_security">Cyber Security</h3>
-          <p data-i18n="service_security_desc">Protect your systems and data with advanced security strategies.</p>
-          <ul>
-            <li>Security Audits</li>
-            <li>Penetration Testing</li>
-            <li>24/7 Monitoring</li>
-          </ul>
-        </div>
-
+      <div class="form-group">
+        <label for="clientEmail" data-i18n="form_email">Email</label>
+        <input type="email" id="clientEmail" required>
       </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container cta-content">
-      <h3 data-i18n="cta_title">Need a Custom Solution?</h3>
-      <p data-i18n="cta_desc">Contact us today and let's discuss your project.</p>
-      <a href="contact.html" class="btn primary" data-i18n="contact_cta">Get in Touch</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 NovaTech. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+      <div class="form-group">
+        <label for="serviceSelect" data-i18n="form_service">Select Service</label>
+        <select id="serviceSelect" required></select>
       </div>
-    </div>
-  </footer>
+      <div class="form-group">
+        <label for="budget" data-i18n="form_budget">Estimated Budget ($)</label>
+        <input type="number" id="budget" required>
+      </div>
+      <div class="form-group">
+        <label for="details" data-i18n="form_details">Project Details</label>
+        <textarea id="details" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn primary" data-i18n="form_submit">Submit Request</button>
+    </form>
+  </div>
+</section>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/services.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/services.js"></script>
 </body>
 </html>
