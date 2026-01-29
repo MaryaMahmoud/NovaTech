@@ -114,8 +114,110 @@ const translations = {
     service_cloud_details: "We migrate, manage, and optimize your infrastructure on the cloud.",
     service_security: "Cyber Security",
     service_security_desc: "Advanced protection for your business.",
-    service_security_details: "We provide security audits, monitoring, and protection from cyber threats."
-  },
+    service_security_details: "We provide security audits, monitoring, and protection from cyber threats.",
+  pricing_title: "Our Pricing Plans",
+pricing_desc: "Choose the plan that fits your business needs and budget.",
+pricing_cta_title: "Not sure which plan is right for you?",
+pricing_cta_desc: "Contact us and we’ll help you choose the best solution.",
+pricing_cta_btn: "Contact Us",
+
+plan_basic: "Basic",
+plan_basic_desc: "Perfect for small projects and startups.",
+plan_basic_f1: "Landing page or simple website",
+plan_basic_f2: "Responsive design",
+plan_basic_f3: "Basic SEO setup",
+
+plan_standard: "Standard",
+plan_standard_desc: "Ideal for growing businesses.",
+plan_standard_f1: "Multi-page website",
+plan_standard_f2: "Responsive & modern UI",
+plan_standard_f3: "SEO optimization",
+plan_standard_f4: "Contact form integration",
+
+plan_premium: "Premium",
+plan_premium_desc: "Best for large and complex projects.",
+plan_premium_f1: "Custom web or mobile app",
+plan_premium_f2: "Advanced UI/UX design",
+plan_premium_f3: "API integration",
+plan_premium_f4: "Performance optimization",
+plan_premium_f5: "Ongoing support",
+
+pricing_choose: "Choose Plan",
+testimonials_title: "What Our Clients Say",
+testimonials_desc: "Real feedback from businesses we’ve helped grow.",
+stats_projects: "Completed Projects",
+stats_clients: "Happy Clients",
+stats_satisfaction: "Client Satisfaction",
+stats_rating: "Average Rating",
+
+featured_title: "Client Success Story",
+featured_quote: "NovaTech transformed our digital presence completely. Their team delivered beyond our expectations.",
+featured_name: "Sarah Johnson",
+featured_role: "CEO, Bright Solutions",
+
+t1_name: "Ahmed Hassan",
+t1_role: "Founder, TechStart",
+t1_text: "NovaTech built our platform from scratch and delivered an outstanding result. Highly professional team!",
+
+t2_name: "Lina Omar",
+t2_role: "Marketing Manager, BloomCo",
+t2_text: "Our website performance and design improved dramatically. We saw immediate growth after launch.",
+
+t3_name: "David Miller",
+t3_role: "CTO, CloudWave",
+t3_text: "They handled complex cloud infrastructure seamlessly. Excellent communication and support.",
+
+t4_name: "Fatima Noor",
+t4_role: "Owner, Noor Boutique",
+t4_text: "The e-commerce store they built for us increased our sales by over 40%. Amazing work!",
+
+t5_name: "Omar Khaled",
+t5_role: "Product Manager, NovaApps",
+t5_text: "Working with NovaTech was smooth and efficient. The final product exceeded our expectations.",
+
+t6_name: "Emily Chen",
+t6_role: "Startup Founder",
+t6_text: "From idea to launch, they guided us through every step with professionalism and creativity.",
+
+case_title: "Case Studies",
+case1_title: "E-commerce Growth",
+case1_desc: "Helped an online store increase sales by 60% through UX redesign and performance optimization.",
+case2_title: "Mobile App Launch",
+case2_desc: "Developed a scalable mobile app used by over 100,000 users worldwide.",
+case3_title: "Cloud Migration",
+case3_desc: "Migrated enterprise systems to the cloud, improving security and reducing costs.",
+
+testimonials_cta_title: "Ready to become our next success story?",
+testimonials_cta_desc: "Let’s build something amazing together.",
+testimonials_cta_btn: "Start Your Project",
+contact_title: "Contact Us",
+contact_desc: "We’d love to hear from you. Reach out to us anytime.",
+contact_location_title: "Our Location",
+contact_location_desc: "Cairo, Egypt",
+contact_email_title: "Email Address",
+contact_email_desc: "info@novatech.com",
+contact_phone_title: "Phone Number",
+contact_phone_desc: "+20 123 456 7890",
+contact_hours_title: "Working Hours",
+contact_hours_desc: "Sunday - Thursday: 9 AM - 6 PM",
+
+contact_form_title: "Send Us a Message",
+contact_form_desc: "Fill out the form below and we’ll get back to you as soon as possible.",
+form_subject: "Subject",
+form_message: "Message",
+
+contact_testimonials_title: "What Our Clients Say",
+contact_testimonials_desc: "Real feedback from people who worked with us.",
+add_review_title: "Add Your Review",
+review_name_placeholder: "Your Name",
+review_text_placeholder: "Your Review",
+review_submit: "Submit Review",
+
+map_title: "Our Location on the Map",
+map_desc: "Map integration coming soon."
+
+
+},
 
   ar: {
     home: "الرئيسية",
@@ -205,8 +307,110 @@ const translations = {
     service_cloud_details: "نقوم بترحيل وإدارة وتحسين بنيتك التحتية على السحابة.",
     service_security: "الأمن السيبراني",
     service_security_desc: "حماية متقدمة لأعمالك.",
-    service_security_details: "نوفر تدقيقًا أمنيًا ومراقبة وحماية من التهديدات السيبرانية."
-  }
+    service_security_details: "نوفر تدقيقًا أمنيًا ومراقبة وحماية من التهديدات السيبرانية.",
+  pricing_title: "خطط الأسعار لدينا",
+pricing_desc: "اختر الخطة التي تناسب احتياجات عملك وميزانيتك.",
+pricing_cta_title: "غير متأكد أي خطة تناسبك؟",
+pricing_cta_desc: "تواصل معنا وسنساعدك في اختيار الحل الأنسب.",
+pricing_cta_btn: "تواصل معنا",
+
+plan_basic: "الأساسية",
+plan_basic_desc: "مثالية للمشاريع الصغيرة والشركات الناشئة.",
+plan_basic_f1: "صفحة هبوط أو موقع بسيط",
+plan_basic_f2: "تصميم متجاوب",
+plan_basic_f3: "إعداد SEO أساسي",
+
+plan_standard: "القياسية",
+plan_standard_desc: "مناسبة للشركات المتوسطة والمتنامية.",
+plan_standard_f1: "موقع متعدد الصفحات",
+plan_standard_f2: "تصميم حديث ومتجاوب",
+plan_standard_f3: "تحسين محركات البحث",
+plan_standard_f4: "دمج نموذج تواصل",
+
+plan_premium: "الاحترافية",
+plan_premium_desc: "الأفضل للمشاريع الكبيرة والمعقدة.",
+plan_premium_f1: "تطبيق ويب أو موبايل مخصص",
+plan_premium_f2: "تصميم UI/UX متقدم",
+plan_premium_f3: "دمج واجهات برمجية",
+plan_premium_f4: "تحسين الأداء",
+plan_premium_f5: "دعم مستمر",
+
+pricing_choose: "اختر الخطة",
+testimonials_title: "ماذا يقول عملاؤنا",
+testimonials_desc: "آراء حقيقية من شركات ساعدناها على النمو.",
+stats_projects: "المشاريع المنجزة",
+stats_clients: "عملاء سعداء",
+stats_satisfaction: "رضا العملاء",
+stats_rating: "متوسط التقييم",
+
+featured_title: "قصة نجاح عميل",
+featured_quote: "غيرت NovaTech حضورنا الرقمي بالكامل. فريقهم قدم أكثر مما توقعنا.",
+featured_name: "سارة جونسون",
+featured_role: "المديرة التنفيذية، Bright Solutions",
+
+t1_name: "أحمد حسن",
+t1_role: "مؤسس، TechStart",
+t1_text: "قامت NovaTech ببناء منصتنا من الصفر وقدمت نتيجة رائعة. فريق محترف جدًا!",
+
+t2_name: "لينا عمر",
+t2_role: "مديرة تسويق، BloomCo",
+t2_text: "تحسن أداء وتصميم موقعنا بشكل كبير، وشهدنا نموًا فوريًا بعد الإطلاق.",
+
+t3_name: "ديفيد ميلر",
+t3_role: "المدير التقني، CloudWave",
+t3_text: "تعاملوا مع بنية سحابية معقدة بسلاسة تامة. تواصل ودعم ممتاز.",
+
+t4_name: "فاطمة نور",
+t4_role: "مالكة، Noor Boutique",
+t4_text: "المتجر الإلكتروني الذي بنوه لنا زاد مبيعاتنا بأكثر من 40%. عمل مذهل!",
+
+t5_name: "عمر خالد",
+t5_role: "مدير منتجات، NovaApps",
+t5_text: "العمل مع NovaTech كان سلسًا وفعالًا. المنتج النهائي فاق توقعاتنا.",
+
+t6_name: "إيميلي تشين",
+t6_role: "مؤسسة شركة ناشئة",
+t6_text: "من الفكرة إلى الإطلاق، أرشدونا في كل خطوة باحترافية وإبداع.",
+
+case_title: "دراسات حالة",
+case1_title: "نمو متجر إلكتروني",
+case1_desc: "ساعدنا متجرًا إلكترونيًا على زيادة المبيعات بنسبة 60% عبر تحسين تجربة المستخدم والأداء.",
+case2_title: "إطلاق تطبيق موبايل",
+case2_desc: "طورنا تطبيقًا قابلًا للتوسع يستخدمه أكثر من 100,000 مستخدم حول العالم.",
+case3_title: "الهجرة إلى السحابة",
+case3_desc: "نقلنا أنظمة شركات كبرى إلى السحابة مع تحسين الأمان وتقليل التكاليف.",
+
+testimonials_cta_title: "هل أنت مستعد لتكون قصة نجاحنا القادمة؟",
+testimonials_cta_desc: "دعنا نبني شيئًا رائعًا معًا.",
+testimonials_cta_btn: "ابدأ مشروعك",
+contact_title: "تواصل معنا",
+contact_desc: "يسعدنا التواصل معك في أي وقت.",
+contact_location_title: "موقعنا",
+contact_location_desc: "القاهرة، مصر",
+contact_email_title: "البريد الإلكتروني",
+contact_email_desc: "info@novatech.com",
+contact_phone_title: "رقم الهاتف",
+contact_phone_desc: "+20 123 456 7890",
+contact_hours_title: "ساعات العمل",
+contact_hours_desc: "الأحد - الخميس: 9 صباحًا - 6 مساءً",
+
+contact_form_title: "أرسل لنا رسالة",
+contact_form_desc: "املأ النموذج أدناه وسنرد عليك في أقرب وقت.",
+form_subject: "الموضوع",
+form_message: "الرسالة",
+
+contact_testimonials_title: "آراء عملائنا",
+contact_testimonials_desc: "آراء حقيقية من أشخاص تعاملوا معنا.",
+add_review_title: "أضف رأيك",
+review_name_placeholder: "اسمك",
+review_text_placeholder: "رأيك",
+review_submit: "إرسال الرأي",
+
+map_title: "موقعنا على الخريطة",
+map_desc: "سيتم إضافة الخريطة قريبًا."
+
+
+}
 };
 
 function applyTranslations() {

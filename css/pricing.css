@@ -1,140 +1,119 @@
-.page-hero {
-  background: linear-gradient(135deg, #eef2ff, #ecfeff);
-  padding: 80px 0 60px;
+/* ================= PRICING HERO ================= */
+.pricing-hero {
+  padding: 100px 0;
   text-align: center;
 }
 
-.page-hero h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--dark-color);
-  margin-bottom: 12px;
+.pricing-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
 }
 
-.page-hero p {
+.pricing-hero p {
+  color: var(--muted);
   font-size: 1.1rem;
-  color: #475569;
+  max-width: 600px;
+  margin: auto;
 }
 
+/* ================= PRICING SECTION ================= */
 .pricing-section {
   padding: 80px 0;
-  background: white;
 }
 
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  gap: 30px;
 }
 
 .pricing-card {
-  background: #f8fafc;
-  border-radius: var(--border-radius);
+  background: var(--card);
+  border-radius: 20px;
   padding: 36px 28px;
   text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: 0.3s;
   position: relative;
-  transition: var(--transition);
-  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.03);
 }
 
 .pricing-card h3 {
   font-size: 1.4rem;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .pricing-card .price {
-  font-size: 2.4rem;
-  font-weight: 900;
-  color: var(--primary-color);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary);
   margin-bottom: 20px;
 }
 
 .pricing-card ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .pricing-card ul li {
+  color: var(--muted);
   font-size: 0.95rem;
-  color: #334155;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   position: relative;
-  padding-left: 20px;
+  padding-left: 22px;
 }
 
 .pricing-card ul li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: var(--secondary-color);
-  font-size: 0.85rem;
+  color: var(--primary);
 }
 
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.1);
-  border-color: var(--primary-color);
-}
-
-.pricing-card.featured {
-  background: white;
-  border: 2px solid var(--primary-color);
-  transform: scale(1.03);
-}
-
-.pricing-card.featured:hover {
-  transform: scale(1.05) translateY(-10px);
-}
-
+/* ================= BADGE ================= */
 .badge {
   position: absolute;
-  top: -12px;
+  top: -14px;
   right: 20px;
-  background: var(--primary-color);
+  background: var(--primary);
   color: white;
   padding: 6px 14px;
-  border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 700;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.faq {
+/* ================= CTA ================= */
+.pricing-cta {
   padding: 80px 0;
-  background: #f1f5f9;
+  background: var(--card);
+  text-align: center;
 }
 
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+.pricing-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
 }
 
-.faq-item {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 28px 24px;
-  transition: var(--transition);
+.pricing-cta p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
 }
 
-.faq-item h4 {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: var(--dark-color);
-}
-
-.faq-item p {
-  font-size: 0.95rem;
-  color: #475569;
-}
-
-.faq-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .page-hero h2 {
-    font-size: 2rem;
+  .pricing-hero h1 {
+    font-size: 2.2rem;
   }
 }

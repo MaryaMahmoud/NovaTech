@@ -1,94 +1,194 @@
-.page-hero {
-  background: linear-gradient(135deg, #eef2ff, #ecfeff);
-  padding: 80px 0 60px;
+/* ================= CONTACT HERO ================= */
+.contact-hero {
+  padding: 100px 0;
   text-align: center;
 }
 
-.page-hero h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--dark-color);
-  margin-bottom: 12px;
-}
-
-.page-hero p {
-  font-size: 1.1rem;
-  color: #475569;
-}
-
-.contact-section {
-  padding: 80px 0;
-  background: white;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.contact-info {
-  background: #f8fafc;
-  border-radius: var(--border-radius);
-  padding: 32px 28px;
-}
-
-.contact-info h3 {
-  font-size: 1.4rem;
+.contact-hero h1 {
+  font-size: 3rem;
   margin-bottom: 16px;
 }
 
-.contact-info p {
+.contact-hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+  padding: 80px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-card i {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  color: var(--muted);
   font-size: 0.95rem;
-  margin-bottom: 20px;
-  color: #475569;
 }
 
-.contact-info ul {
-  list-style: none;
-  padding: 0;
+/* ================= CONTACT FORM ================= */
+.contact-form-section {
+  padding: 80px 0;
+  background: var(--card);
 }
 
-.contact-info ul li {
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.form-left h2,
+.form-right h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.form-left p,
+.form-right p {
+  color: var(--muted);
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 18px;
+}
+
+.contact-form label {
+  display: block;
   font-size: 0.9rem;
-  margin-bottom: 10px;
-  color: #334155;
-}
-
-.contact-info ul li i {
-  margin-right: 8px;
-  color: var(--primary-color);
-}
-
-.contact-form {
-  background: #f8fafc;
-  border-radius: var(--border-radius);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  margin-bottom: 6px;
+  color: var(--text);
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #cbd5f5;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
   font-size: 0.95rem;
+  transition: 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--primary);
 }
 
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+/* ================= REVIEWS ================= */
+.user-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
 
-  .page-hero h2 {
-    font-size: 2rem;
+.user-review {
+  background: var(--bg);
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.user-review h4 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.user-review p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  transition: 0.3s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ================= MAP SECTION ================= */
+.map-section {
+  padding: 80px 0;
+}
+
+.map-section .section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-placeholder {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.map-placeholder i {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.map-placeholder p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 2.2rem;
   }
 }

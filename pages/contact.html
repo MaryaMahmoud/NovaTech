@@ -1,89 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>NovaTech | Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">NovaTech</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="services.html" data-i18n="nav_services">Services</a></li>
-          <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
-          <li><a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a></li>
-          <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button id="lang-toggle" class="icon-btn">🌐</button>
-        <button id="theme-toggle" class="icon-btn">🌙</button>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-      </div>
+<header class="navbar">
+  <div class="container nav-content">
+    <h2 class="logo">NovaTech</h2>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html" data-i18n="home">Home</a>
+      <a href="services.html" data-i18n="services">Services</a>
+      <a href="pricing.html" data-i18n="pricing">Pricing</a>
+      <a href="testimonials.html" data-i18n="testimonials">Testimonials</a>
+      <a href="contact.html" class="active" data-i18n="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="langToggle">🌐</button>
+      <button id="themeToggle">🌙</button>
+      <button id="menuToggle" class="menu-btn"><i class="fas fa-bars"></i></button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h2 data-i18n="contact_title">Contact Us</h2>
-      <p data-i18n="contact_desc">We would love to hear from you. Let’s work together!</p>
+<!-- ===== HERO ===== -->
+<section class="contact-hero">
+  <div class="container">
+    <h1 data-i18n="contact_title"></h1>
+    <p data-i18n="contact_desc"></p>
+  </div>
+</section>
+
+<!-- ===== CONTACT INFO ===== -->
+<section class="contact-info">
+  <div class="container info-grid">
+    <div class="info-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3 data-i18n="contact_location_title"></h3>
+      <p data-i18n="contact_location_desc"></p>
     </div>
-  </section>
+    <div class="info-card">
+      <i class="fas fa-envelope"></i>
+      <h3 data-i18n="contact_email_title"></h3>
+      <p data-i18n="contact_email_desc"></p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-phone"></i>
+      <h3 data-i18n="contact_phone_title"></h3>
+      <p data-i18n="contact_phone_desc"></p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-clock"></i>
+      <h3 data-i18n="contact_hours_title"></h3>
+      <p data-i18n="contact_hours_desc"></p>
+    </div>
+  </div>
+</section>
 
-  <section class="contact-section">
-    <div class="container contact-grid">
+<!-- ===== CONTACT FORM ===== -->
+<section class="contact-form-section">
+  <div class="container form-grid">
+    <div class="form-left">
+      <h2 data-i18n="contact_form_title"></h2>
+      <p data-i18n="contact_form_desc"></p>
 
-      <div class="contact-info">
-        <h3>Get In Touch</h3>
-        <p>Have a project in mind? Let’s talk!</p>
-        <ul>
-          <li><i class="fas fa-envelope"></i> contact@novatech.com</li>
-          <li><i class="fas fa-phone"></i> +20 100 123 4567</li>
-          <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
-        </ul>
-      </div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="name" data-i18n="form_name"></label>
+          <input type="text" id="name" required>
+        </div>
 
-      <form class="contact-form">
-        <input type="text" placeholder="Full Name" data-i18n-placeholder="contact_name" required />
-        <input type="email" placeholder="Email Address" data-i18n-placeholder="contact_email" required />
-        <textarea rows="5" placeholder="Your Message" data-i18n-placeholder="contact_message" required></textarea>
-        <button type="submit" class="btn primary" data-i18n="contact_send">Send Message</button>
+        <div class="form-group">
+          <label for="email" data-i18n="form_email"></label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" data-i18n="form_subject"></label>
+          <input type="text" id="subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message" data-i18n="form_message"></label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary" data-i18n="form_submit"></button>
       </form>
-
     </div>
-  </section>
 
-  <section class="cta">
-    <div class="container cta-content">
-      <h3 data-i18n="cta_title">Let’s Build Something Together</h3>
-      <p data-i18n="cta_desc">We’re ready when you are.</p>
-      <a href="../index.html" class="btn secondary" data-i18n="nav_home">Home</a>
+    <div class="form-right">
+      <h2 data-i18n="contact_testimonials_title"></h2>
+      <p data-i18n="contact_testimonials_desc"></p>
+
+      <div id="userReviews" class="user-reviews"></div>
+
+      <h3 data-i18n="add_review_title"></h3>
+      <form id="reviewForm" class="review-form">
+        <input type="text" id="reviewName" data-i18n-placeholder="review_name_placeholder" required>
+        <textarea id="reviewText" data-i18n-placeholder="review_text_placeholder" rows="3" required></textarea>
+        <button type="submit" class="btn secondary" data-i18n="review_submit"></button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 NovaTech. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
+<!-- ===== MAP SECTION ===== -->
+<section class="map-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="map_title"></h2>
+    <div class="map-placeholder">
+      <i class="fas fa-map"></i>
+      <p data-i18n="map_desc"></p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/contact.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/contact.js"></script>
 </body>
 </html>
